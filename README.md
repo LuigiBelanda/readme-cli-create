@@ -10,9 +10,9 @@
 <br>
 
 <h2> 🔬 Technologies / Tools / Programming languages ​​used: </h2>
-<!--- Ex: HTML, CSS, JS, Node.Js, Yarn, NPM, PHP, Insomnia, Postman, Vs code... ---> 
+<!--- Ex: HTML, CSS, JS, Node.js, Yarn, NPM, PHP, Insomnia, Postman, Vs code... ---> 
 <ul>
-    <li>Node.Js</li>
+    <li>Node.js</li>
     <li>VS CODE</li>
     <li>Yarn</li>
 </ul>
@@ -22,7 +22,7 @@
 <h2> 💻 Prerequisites: </h2>
 <!--- Ex: install node, npm, yarn... ---> 
 <ul>
-    <li>Install node.js</li>
+    <li>Install Node.js</li>
     <li>Install Yarn or npm</li>
 </ul>
 
