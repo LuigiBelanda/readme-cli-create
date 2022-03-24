@@ -23,7 +23,7 @@
 <!--- Ex: install node, npm, yarn... ---> 
 <ul>
     <li>Install node.js</li>
-    <li>install Yarn or npm</li>
+    <li>Install Yarn or npm</li>
 </ul>
 
 <br>
@@ -72,6 +72,8 @@ readme-cli-create
 <a href="https://github.com/LuigiBelanda"> 
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" width="100px">
 </a> 
+
+<br>
 
 <a href="https://www.linkedin.com/in/luigi-belanda-752436183/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"width="100px">
