@@ -1,0 +1,14 @@
+{
+  "name": "readme-cli-create",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LuigiBelanda/readme-cli-create.git",
+  "author": "LuigiBelanda <luigi.belanda.milani@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "readme-cli-create": "./bin/readme-cli-create"
+  },
+  "files": [
+    "./bin"
+  ]
+}
