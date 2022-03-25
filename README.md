@@ -65,6 +65,13 @@ readme-cli-create
 
 <br>
 
+<h2>📄 Versions</h2>
+
+- [x] 1.0.0 - 1.0.1 (Putting CLI in NPM, actual implementation of the idea)
+- [x] 1.0.2 (Added check if the README.md file already exists in the directory, Added the "-y" parameter to create the file in any situation)
+
+<br>
+
 <h2> 👨‍💻 Developed by: </h2>
 <strong> <p>Luigi Belanda</p> </strong>
 <img src="https://avatars.githubusercontent.com/LuigiBelanda" width="100px" height="100px">
