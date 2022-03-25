@@ -2,8 +2,7 @@
 
 const fs = require("fs");
 
-const content_file = 
-`<h1 align=center> Title </h1>
+const content_file = `<h1 align=center> Title </h1>
 <h3 align=center> Description </h3>
 
 <br>
@@ -55,8 +54,31 @@ const content_file =
 
 `;
 
+const all_params = process.argv;
+const param_accept = all_params.slice(2);
+// console.log(param_accept);
 
-fs.writeFile("README.md", content_file, (err) => {
-  if (err) throw err;
-  console.log("O arquivo foi criado!");
-});
+const exists_readme = fs.existsSync(".");
+
+if (param_accept == "-y") {
+  create_file(content_file);
+} else {
+  verify_content(exists_readme);
+}
+
+function verify_content(exists_readme) {
+  if (exists_readme === true) {
+    console.log("There is already a README.md file in your directory");
+    console.log("If you want to replace this existing README.md with another one there are some alternatives, delete it, rename it or use -y parameter in CLI command execution. Ex: readme-cli-create -y");
+    return;
+  } else {
+    create_file(content_file);
+  }
+}
+
+function create_file(content_file) {
+  fs.writeFile("README.md", content_file, (err) => {
+    if (err) throw err;
+    console.log("The file has been created!");
+  });
+}
