@@ -69,6 +69,7 @@ readme-cli-create
 
 - [x] 1.0.0 - 1.0.1 (Putting CLI in NPM, actual implementation of the idea)
 - [x] 1.0.2 (Added check if the README.md file already exists in the directory, Added the "-y" parameter to create the file in any situation)
+- [x] 1.0.3 - 1.0.4 (Fixing the check for the existence of README.md in the directory where the command was executed and updating the README.md)
 
 <br>
 

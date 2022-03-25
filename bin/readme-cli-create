@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
+const path = require("path");
 
 const content_file = `<h1 align=center> Title </h1>
 <h3 align=center> Description </h3>
@@ -55,20 +56,31 @@ const content_file = `<h1 align=center> Title </h1>
 `;
 
 const all_params = process.argv;
+//console.log(all_params)
+
 const param_accept = all_params.slice(2);
 // console.log(param_accept);
 
-const exists_readme = fs.existsSync(".");
+const my_path = process.cwd();
+//console.log(my_path);
+
+const files_in_dir = fs.readdirSync(my_path);
+//console.log(files_in_dir);
 
 if (param_accept == "-y") {
   create_file(content_file);
 } else {
-  verify_content(exists_readme);
+  verify_content(files_in_dir);
 }
 
-function verify_content(exists_readme) {
-  if (exists_readme === true) {
-    console.log("There is already a README.md file in your directory");
+function verify_content(files_in_dir) {
+  const readme_exists = files_in_dir.includes("README.md");
+  exists_readme(readme_exists);
+}
+
+function exists_readme(readme_exists) {
+  if (readme_exists == true) {
+    console.log(`There is already a README.md file in your directory, ${my_path}`);
     console.log("If you want to replace this existing README.md with another one there are some alternatives, delete it, rename it or use -y parameter in CLI command execution. Ex: readme-cli-create -y");
     return;
   } else {
