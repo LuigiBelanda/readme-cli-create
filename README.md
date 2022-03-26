@@ -4,6 +4,13 @@
 <br>
 <br>
 
+<h2>👀 Comments</h2> 
+<p>This CLI was made in a Linux environment (Zorin OS 16 Lite), from what I found in a Windows environment the CLI has problems working.
+
+I don't know if this affects all Windows environments, as I've only tested it on one PC, but even so those who can contribute would be of great help</p>
+
+<br>
+
 <h2> ⭐ Objectives of this repository / project: </h2>
 <p>This project aims to make my life a little easier when creating READMEs.md, I always prefer to use a pattern, without changing too much from project to project, so I decided to create a CLI for whenever I need to type just one command in the terminal and that generate me a README.md the way I want or with a good base of it already ready, perfect to be something fast and agile</p>
 
@@ -70,6 +77,7 @@ readme-cli-create
 - [x] 1.0.0 - 1.0.1 (Putting CLI in NPM, actual implementation of the idea)
 - [x] 1.0.2 (Added check if the README.md file already exists in the directory, Added the "-y" parameter to create the file in any situation)
 - [x] 1.0.3 - 1.0.4 (Fixing the check for the existence of README.md in the directory where the command was executed and updating the README.md)
+- [x] 1.0.5 (Separating the README.md template from the main part of the CLI)
 
 <br>
 
