@@ -70,6 +70,30 @@ npm link
 readme-cli-create
 ```
 
+<p>To create the readme file anyway, in this case it will use template number 0</p>
+
+```
+readme-cli-create -y
+```
+
+<p>To use one of the templates just use one of the commands</p>
+
+```
+readme-cli-create 0
+```
+
+```
+readme-cli-create 1
+```
+
+```
+readme-cli-create -y 0
+```
+
+```
+readme-cli-create -y 1
+```
+
 <br>
 
 <h2>📄 Versions</h2>
@@ -78,6 +102,7 @@ readme-cli-create
 - [x] 1.0.2 (Added check if the README.md file already exists in the directory, Added the "-y" parameter to create the file in any situation)
 - [x] 1.0.3 - 1.0.4 (Fixing the check for the existence of README.md in the directory where the command was executed and updating the README.md)
 - [x] 1.0.5 (Separating the README.md template from the main part of the CLI)
+- [x] 1.0.6 (By creating a new parameter (readme templates), we can now choose between readme template 0 and 1 (initial stage of the idea), better commenting the code)
 
 <br>
 

@@ -1,31 +1,78 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
-const content_file = require("./content");
+const readme_models = require("./readme_models");
 
+// taking the parameters that come from the command in the terminal
 const all_params = process.argv;
-//console.log(all_params)
+//console.log(all_params);
 
-const param_accept = all_params.slice(2);
-// console.log(param_accept);
+if (all_params.length == 4) {
+  if (all_params[2] == "-y") {
+    // leaving only parameter "-y"
+    var param_accept = all_params.slice(2);
+    param_accept.pop();
+    //console.log(param_accept);
 
+    // leaving only the readme model
+    var readme_model = all_params.slice(3);
+    //console.log(readme_model);
+
+    if (readme_model == "0") {
+      var content_file = readme_models[readme_model];
+      //console.log(content_file);
+    }
+    if (readme_model == "1") {
+      var content_file = readme_models[readme_model];
+      //console.log(content_file);
+    }
+  }
+}
+
+if (all_params.length == 3) {
+  if (all_params[2] == "-y") {
+    // leaving only parameter "-y"
+    var param_accept = all_params.slice(2);
+    var content_file = readme_models[0];
+  }
+  if (all_params[2] == "0") {
+    var readme_model = all_params.slice(2);
+    //console.log(readme_model);
+
+    var content_file = readme_models[readme_model];
+    //console.log(content_file);
+  }
+  if (all_params[2] == "1") {
+    var readme_model = all_params.slice(2);
+    //console.log(readme_model);
+
+    var content_file = readme_models[readme_model];
+    //console.log(content_file);
+  }
+}
+
+// seeing which directory path we are running command
 const my_path = process.cwd();
 //console.log(my_path);
 
+// seeing which files exist in the directory
 const files_in_dir = fs.readdirSync(my_path);
 //console.log(files_in_dir);
 
+// checking if "-y" parameter came in the command
 if (param_accept == "-y") {
   create_file(content_file);
 } else {
   verify_content(files_in_dir);
 }
 
+// checking if a readme file already exists in the directory
 function verify_content(files_in_dir) {
   const readme_exists = files_in_dir.includes("README.md");
   exists_readme(readme_exists);
 }
 
+// return if there is already a readme or not
 function exists_readme(readme_exists) {
   if (readme_exists == true) {
     console.log(`There is already a README.md file in your directory, ${my_path}`);
@@ -36,6 +83,7 @@ function exists_readme(readme_exists) {
   }
 }
 
+// function that creates the readme file
 function create_file(content_file) {
   fs.writeFile("README.md", content_file, (err) => {
     if (err) throw err;

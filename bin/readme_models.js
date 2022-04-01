@@ -1,4 +1,5 @@
-const content_file = `<h1 align=center> Title </h1>
+const readme_models = [
+`<h1 align=center> Title </h1>
 <h3 align=center> Description </h3>
 
 <br>
@@ -48,6 +49,15 @@ const content_file = `<h1 align=center> Title </h1>
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"width="100px">
 </a>
 
-`;
+`, 
 
-module.exports = content_file;
+`<h1 align=center> Title </h1>
+<h3 align=center> Description </h3>
+
+<br>
+<br>
+
+<h2> ⭐ Objectives of this repository / project: </h2>
+<p></p>`];
+
+module.exports = readme_models;
