@@ -1,4 +1,6 @@
-const readme_models = [
+const github_username = require("../bin/readme-cli-create");
+
+const readme_model0 = 
 `<h1 align=center> Title </h1>
 <h3 align=center> Description </h3>
 
@@ -36,7 +38,7 @@ const readme_models = [
 <br>
 
 <h2> 👨‍💻 Developed by: </h2>
-<strong> <p>Your Name / User Name Github</p> </strong>
+<strong> <p> Name / Github username </p> </strong>
 <img src="https://avatars.githubusercontent.com/user_name" width="100px" height="100px">
 
 <a href="https://github.com/user_name"> 
@@ -48,16 +50,7 @@ const readme_models = [
 <a href="https://www.linkedin.com/in/user_name/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"width="100px">
 </a>
-
-`, 
-
-`<h1 align=center> Title </h1>
-<h3 align=center> Description </h3>
-
-<br>
-<br>
-
-<h2> ⭐ Objectives of this repository / project: </h2>
-<p></p>`];
-
-module.exports = readme_models;
+`
+  
+module.exports = readme_model0;
+  

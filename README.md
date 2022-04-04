@@ -103,6 +103,7 @@ readme-cli-create -y 1
 - [x] 1.0.3 - 1.0.4 (Fixing the check for the existence of README.md in the directory where the command was executed and updating the README.md)
 - [x] 1.0.5 (Separating the README.md template from the main part of the CLI)
 - [x] 1.0.6 (By creating a new parameter (readme templates), we can now choose between readme template 0 and 1 (initial stage of the idea), better commenting the code)
+- [x] 1.0.7 (Fixing some bugs, changing the idea of ​​how to store readme templates and showing better success and error messages to the user)
 
 <br>
 
