@@ -70,29 +70,16 @@ npm link
 readme-cli-create
 ```
 
-<p>To create the readme file anyway, in this case it will use template number 0</p>
+<p>To create the readme file anyway</p>
 
 ```
 readme-cli-create -y
 ```
 
-<p>To use one of the templates just use one of the commands</p>
+<br>
 
-```
-readme-cli-create 0
-```
-
-```
-readme-cli-create 1
-```
-
-```
-readme-cli-create -y 0
-```
-
-```
-readme-cli-create -y 1
-```
+<h2>🖼️ Templates</h2>
+<a href="https://github.com/LuigiBelanda/readme-cli-create/tree/master/models">Models</a>
 
 <br>
 
@@ -104,6 +91,7 @@ readme-cli-create -y 1
 - [x] 1.0.5 (Separating the README.md template from the main part of the CLI)
 - [x] 1.0.6 (By creating a new parameter (readme templates), we can now choose between readme template 0 and 1 (initial stage of the idea), better commenting the code)
 - [x] 1.0.7 (Fixing some bugs, changing the idea of ​​how to store readme templates and showing better success and error messages to the user)
+- [x] 1.0.8 (Adding questions, changing the cli structure in general, removing the need for parameters (0 or 1))
 
 <br>
 
