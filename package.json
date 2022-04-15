@@ -1,15 +1,39 @@
 {
   "name": "readme-cli-create",
-  "version": "1.0.8",
-  "main": "index.js",
-  "repository": "https://github.com/LuigiBelanda/readme-cli-create.git",
+  "version": "1.0.9",
+  "main": "./bin/questions.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuigiBelanda/readme-cli-create.git"
+  },
   "author": "LuigiBelanda <luigi.belanda.milani@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "bin": {
-    "readme-cli-create": "./bin/questions"
+    "readme-cli-create": "./bin/questions.js"
   },
   "files": [
     "./bin"
   ],
-  "keywords": ["cli", "readme-generate", "nodejs"]
+  "keywords": [
+    "cli",
+    "readme-generate",
+    "nodejs",
+    "js"
+  ],
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "ora": "^6.1.0"
+  },
+  "description": "<h1 align=center> readme-cli-create </h1> <h3 align=center> CLI for create README.md </h3>",
+  "bugs": {
+    "url": "https://github.com/LuigiBelanda/readme-cli-create/issues"
+  },
+  "homepage": "https://github.com/LuigiBelanda/readme-cli-create#readme",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "readme-cli-create": "node ./bin/questions.js"
+  }
 }

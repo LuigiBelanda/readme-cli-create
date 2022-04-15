@@ -1,9 +1,11 @@
-const fs = require("fs");
+import fs from "fs";
+import ora from "ora";
+import chalk from "chalk";
 
 function generate_readme(param_accept, infos, readme_model, my_path) {
-  models = [
-`<h1 align=center> ${infos[0]} </h1>
-<h3 align=center> ${infos[1]} </h3>
+  var models = [
+    `<h1 align=center> ${infos.project_name} </h1>
+<h3 align=center> ${infos.description} </h3>
 
 <br>
 <br>
@@ -39,10 +41,10 @@ function generate_readme(param_accept, infos, readme_model, my_path) {
 <br>
 
 <h2> 👨‍💻 Developed by: </h2>
-<strong> <p> ${infos[2]} </p> </strong>
-<img src="https://avatars.githubusercontent.com/${infos[2]}" width="100px" height="100px">
+<strong> <p> ${infos.github_username} </p> </strong>
+<img src="https://avatars.githubusercontent.com/${infos.github_username}" width="100px" height="100px">
 
-<a href="https://github.com/${infos[2]}"> 
+<a href="https://github.com/${infos.github_username}"> 
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" width="100px">
 </a> 
 
@@ -53,22 +55,64 @@ function generate_readme(param_accept, infos, readme_model, my_path) {
 </a>
 `,
 
-`<h1 align=center> ${infos[0]} </h1>
-<h3 align=center> ${infos[1]} </h3>
+`<h1 align=center> ${infos.project_name} </h1>
+<h3 align=center> ${infos.description} </h3>
 
 <br>
 <br>
 
 <h2> ⭐ Objectives of this repository / project: </h2>
 <p></p>
-`
-  ];
+`,
+
+`<img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" min-width="400px" max-width="400px" width="400px" align="right" alt="Computer">
+
+<h1 align="left"> 
+  ${infos.project_name}
+</h1>
+
+<p align="left"> 
+  ${infos.description}
+</p>
+
+<p align="left">
+  🦄 Linguagens: <strong>used languages</strong>
+</p>
+
+<p align="left">
+  💼 Ferramentas: <strong>tools used</strong>
+</p>
+
+<p align="left">
+  💌 Contact: ⤵️
+</p>
+
+<p align="left">
+  <a href="#" alt="Gmail">
+  <img src="https://img.shields.io/badge/-Gmail-FF0000?style=flat-square&labelColor=FF0000&logo=gmail&logoColor=white&link=LINK-EMAIL" /></a>
+
+  <a href="#" alt="Linkedin">
+  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-LINKEDIN" /></a>
+
+  <a href="#" alt="WhatsApp">
+  <img src="https://img.shields.io/badge/-WhatsApp-25d366?style=flat-square&labelColor=25d366&logo=whatsapp&logoColor=white&link=API-WHATSAPP"/></a>
+
+  <a href="#" alt="Facebook">
+  <img src="https://img.shields.io/badge/-Facebook-3b5998?style=flat-square&labelColor=3b5998&logo=facebook&logoColor=white&link=LINK-FACEBOOK"/></a>
+
+  <a href="#" alt="Instagram">
+  <img src="https://img.shields.io/badge/-Instagram-DF0174?style=flat-square&labelColor=DF0174&logo=instagram&logoColor=white&link=LINK-INSTAGRAM"/></a>
+</p>`
+];
 
   if (readme_model == "0") {
     var content_file = models[0];
   }
   if (readme_model == "1") {
     var content_file = models[1];
+  }
+  if (readme_model == "2") {
+    var content_file = models[2];
   }
 
   // seeing which files exist in the directory
@@ -90,9 +134,24 @@ function generate_readme(param_accept, infos, readme_model, my_path) {
   // return if there is already a readme or not
   function exists_readme(readme_exists) {
     if (readme_exists == true) {
-      console.log("🔧 Generating file\n");
-      setTimeout(() => { console.log(`\x1b[31m%s\x1b[0m`,`🚫 There is already a README.md file in your directory ${my_path}`); }, 1000);
-      setTimeout(() => { console.log( "🤷 If you want to replace this existing README.md with another one there are some alternatives, delete it, rename it or use -y parameter in CLI command execution. Ex: readme-cli-create -y"); }, 1000);
+      const spinner = ora("🔧 Generating file").start(
+        setTimeout(() => {
+          spinner.color = "yellow";
+          spinner.text = chalk.yellow("🔧 Generating file");
+        }, 50)
+      );
+
+      setTimeout(() => {
+        spinner.stop();
+        spinner.warn("The file was not generated, it looks like there was an error! Check what happened below\n");
+      }, 2000);
+
+      setTimeout(() => {
+        console.log(chalk.red(`🚫 There is already a README.md file in your directory ${my_path}`));
+        console.log("🤷 If you want to replace this existing README.md with another one there are some alternatives, delete it, rename it or use -y parameter in CLI command execution. Ex: readme-cli-create -y")
+        console.log("\nCheck this project for more infos: https://github.com/LuigiBelanda/readme-cli-create");
+      }, 2250);
+      
       return;
     } else {
       create_file(content_file);
@@ -101,14 +160,30 @@ function generate_readme(param_accept, infos, readme_model, my_path) {
 
   // function that creates the readme file
   function create_file(content_file) {
-    console.log("🔧 Generating file\n");
+    const spinner = ora("🔧 Generating file").start(
+      setTimeout(() => {
+        spinner.color = "yellow";
+        spinner.text = chalk.yellow("🔧 Generating file");
+      }, 50)
+    );
+
     setTimeout(() => {
-      fs.writeFile("README.md", content_file, (err) => {
-        if (err) throw err;
-      });
-      console.log("\x1b[32m%s\x1b[0m",`✅ The file has been created in path ${my_path}`);
-    }, 1000);
+      spinner.stop();
+      spinner.succeed("No error occurred\n");
+    }, 2000);
+
+    setTimeout(() => {
+      console.log(chalk.green(`✅ The file has been created in path ${my_path}, check if the README has all the necessary information and change it if necessary`));
+      console.log("\nCheck this project for more infos: https://github.com/LuigiBelanda/readme-cli-create");
+    }, 2250);
+
+    fs.writeFile("README.md", content_file, (err) => {
+      if (err) {
+        spinner.stop();
+        throw err;
+      }
+    });
   }
 }
 
-module.exports = generate_readme;
+export default generate_readme;

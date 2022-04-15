@@ -1,5 +1,5 @@
-<h1 align=center> ${infos[0]} </h1>
-<h3 align=center> ${infos[1]} </h3>
+<h1 align=center> ${infos.project_name} </h1>
+<h3 align=center> ${infos.description} </h3>
 
 <br>
 <br>

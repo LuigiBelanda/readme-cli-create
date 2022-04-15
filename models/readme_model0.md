@@ -1,5 +1,5 @@
-<h1 align=center> ${infos[0]} </h1>
-<h3 align=center> ${infos[1]} </h3>
+<h1 align=center> ${infos.project_name} </h1>
+<h3 align=center> ${infos.description} </h3>
 
 <br>
 <br>
@@ -35,10 +35,10 @@
 <br>
 
 <h2> 👨‍💻 Developed by: </h2>
-<strong> <p> ${infos[2]} </p> </strong>
-<img src="https://avatars.githubusercontent.com/${infos[2]}" width="100px" height="100px">
+<strong> <p> ${infos.github_username} </p> </strong>
+<img src="https://avatars.githubusercontent.com/${infos.github_username}" width="100px" height="100px">
 
-<a href="https://github.com/${infos[2]}"> 
+<a href="https://github.com/${infos.github_username}"> 
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" width="100px">
 </a> 
 

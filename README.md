@@ -92,6 +92,7 @@ readme-cli-create -y
 - [x] 1.0.6 (By creating a new parameter (readme templates), we can now choose between readme template 0 and 1 (initial stage of the idea), better commenting the code)
 - [x] 1.0.7 (Fixing some bugs, changing the idea of ​​how to store readme templates and showing better success and error messages to the user)
 - [x] 1.0.8 (Adding questions, changing the cli structure in general, removing the need for parameters (0 or 1))
+- [x] 1.0.9 (Add new readme template, changing some project structures, improving responses in terminal)
 
 <br>
 
